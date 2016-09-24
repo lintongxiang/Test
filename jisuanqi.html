@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算器</title>
+		
+		<script type="text/javascript">
+			var numresult;
+			var str;
+			var a;
+			
+			function onclicknum(nums) {
+				str = document.getElementById("nummessege");
+				str.value = str.value + nums;
+			}
+
+			function onclickBackspace() {
+				str = document.getElementById("nummessege");
+				num = str.value;
+				var newstr = num.substring(0, num.length - 1);
+				str.value = newstr;
+			}
+
+			function onclickclear() {
+				str = document.getElementById("nummessege");
+				str.value = "";
+			}
+
+			function onclickresult() {
+				str = document.getElementById("nummessege");
+				numresult = eval(str.value);
+				str.value = numresult;
+			}
+			
+			function onclicksqrt() {
+				str = document.getElementById("nummessege");
+				str.value = Math.sqrt(str.value);
+			}
+			
+		</script>
+		
+		<style type="text/css">
+		.zhh1{
+			height: 80px; 
+			width: 80px; 
+			font-size: 40px; 
+			border-radius: 25%;
+			color: white;
+			background:linear-gradient(#242424,#000000);
+		}
+		.zhh2{
+			height: 170px; 
+			width: 80px; 
+			font-size: 40px; 
+			border-radius: 25%;
+			color: white;
+			background-color: #700201;
+		}
+		</style>
+	</head>
+
+	<body>
+		<table bgcolor="#303030" align="center" bordercolor="#700201" cellspacing="20" width="320px" height="480px" style="border-radius: 10%;">
+			<tr align="center">
+				<td colspan="4" width="320px" height="60px" align="center" bgcolor="#1D1D1D" style="border-radius: 25%">
+					<input type="text" id="nummessege" style="text-align:right; width: 320px; height: 50px; font-size:35px; border-radius: 25%; background-color: #1D1D1D;color: #A9DA71;" readonly="readonly" bgcolor="#1D1D1D" >
+				</td>
+			</tr>
+			<tr align="center">
+				<td><input type="button" value="C" id="clear" onclick="onclickclear()" class="zhh1"></td>
+				<td><input type="button" value="←" id="Backspace" onclick="onclickBackspace()" class="zhh1"></td>
+				<td><input type="button" value="/" id="division" onclick="onclicknum('/')" class="zhh1"></td>
+				<td><input type="button" value="*" id="mul" onclick="onclicknum('*')" class="zhh1"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="button" value="7" id="7" onclick="onclicknum(7)" class="zhh1"></td>
+				<td><input type="button" value="8" id="8" onclick="onclicknum(8)" class="zhh1"></td>
+				<td><input type="button" value="9" id="9" onclick="onclicknum(9)" class="zhh1"></td>
+				<td><input type="button" value="-" id="sub" onclick="onclicknum('-')" class="zhh1"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="button" value="4" id="4" onclick="onclicknum(4)" class="zhh1"></td>
+				<td><input type="button" value="5" id="5" onclick="onclicknum(5)" class="zhh1"></td>
+				<td><input type="button" value="6" id="6" onclick="onclicknum(6)" class="zhh1"></td>
+				<td><input type="button" value="+" id="add" onclick="onclicknum('+')" class="zhh1"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="button" value="1" id="1" onclick="onclicknum(1)" class="zhh1"></td>
+				<td><input type="button" value="2" id="2" onclick="onclicknum(2)" class="zhh1"></td>
+				<td><input type="button" value="3" id="3" onclick="onclicknum(3)" class="zhh1"></td>
+				<td rowspan="2" ><input type="button" value="=" id="result" onclick="onclickresult()" class="zhh2"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="button" value="√" id="sqrt" onclick="onclicksqrt()" class="zhh1"></td>
+				<td><input type="button" value="0" id="0" onclick="onclicknum(0)" class="zhh1"></td>
+				<td><input type="button" value="." id="point" onclick="onclicknum('.')" class="zhh1"></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

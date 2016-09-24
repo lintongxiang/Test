@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>博客园注册验证</title>
+		<link rel="stylesheet" href="css/BKY.css" />
+		<script type="text/javascript">
+			function checkEmail() {
+				var email = document.getElementById("email"); //输入邮箱的文本框
+				var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/; //对电子邮件的验证
+				if(!reg.test(email.value)) {
+					alert('请输入有效的E_mail！');
+				}
+			}
+			function checkUsername() {
+				var username = document.getElementById("username"); //输入用户名的文本框
+				var reg = /^[a-zA-Z]\w{3,15}$/; //对用户名的验证
+				if(!reg.test(username.value)) {
+					alert('登录用户名由英文字母和数字组成的4-16位字符，以字母开头！');
+				}
+			}
+			function checkPassword() {
+				var pwd = document.getElementById("pwd"); //输入密码的文本框
+				var reg = /^\w{4,10}$/; //对密码的验证
+				if(!reg.test(pwd.value)) {
+					alert('密码由英文字母和数字组成的4-10位字符');
+				}
+			}
+			function checkConfirmPassword(){
+				var confirmpwd = document.getElementById("confirmpwd"); //输入用户名的文本框
+				if(document.getElementById("pwd").value!=document.getElementById("confirmpwd").value) {
+					alert('密码不一致！');
+				}
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<table class="main" >
+			<tr>
+				<td colspan="3"><img src="img/logo.png"></td>
+			</tr>
+			<tr>
+				<td class="title" colspan="3">新用户注册</td>
+			</tr>
+			<tr>
+				<td class="hr" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="BlankSpace"></td>
+			</tr>
+			<form action="" method="post">
+				<tr>
+					<td class="left"><font class="number2">邮箱</font>: </td>
+					<td class="center"><input type="text" id="email" name="email" class="textin" onblur="checkEmail()" /></td>
+					<td class="right"></td>
+				</tr>
+				<tr>
+					<td class="left"><font class="number3">用户名</font>:</td>
+					<td class="center"><input type="text" id="username" name="username" class="textin" onblur="checkUsername()"/></td>
+					<td class="right">登录用户名由英文字母和数字组成的4-16位字符，以字母开头</td>
+				</tr>
+				<tr>
+					<td class="left"><font class="number4">显示名称</font>: </td>
+					<td class="center"><input type="text" id="user" name="user" class="textin" /></td>
+					<td class="right"></td>
+				</tr>
+				<tr>
+					<td class="left"><font class="number2">密码</font>: </td>
+					<td class="center"><input type="password" id="pwd" name="pwd" class="textin"  onblur="checkPassword()"/></td>
+					<td class="right">密码由英文字母和数字组成的4-10位字符</td>
+				</tr>
+				<tr>
+					<td class="left"><font class="number4">确认密码</font>: </td>
+					<td class="center"><input type="password" id="confirmpwd" name="confirmpwd" class="textin"  onblur="checkConfirmPassword()"/></td>
+					<td class="right"></td>
+				</tr>
+				<tr>
+					<td colspan="3"><input class="button" type="button" id="register" name="register" value="注&nbsp;册"></td>
+				</tr>
+			</form>
+		</table>
+	</body>
+
+</html>
